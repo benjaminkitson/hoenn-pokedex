@@ -4,7 +4,7 @@ import { pokedex } from "./pokedex.js";
 
 const typeDefs = `#graphql
   type Pokemon {
-    id: String,
+    id: ID,
     name: String,
     ability: String,
     height: Int,
@@ -17,13 +17,23 @@ const typeDefs = `#graphql
   }
 
   type Query {
-    pokemon: [Pokemon]
+    pokedex: [Pokemon]
+    pokemonById(id: ID!): Pokemon
+    pokemonByIds(ids: [ID]!): [Pokemon]
   }
 `;
 
 const resolvers = {
   Query: {
-    pokemon: () => pokedex,
+    pokedex: () => pokedex,
+    pokemonById(parent, args, contextValue, info) {
+      const result = pokedex.find((pokemon) => pokemon.id === args.id);
+      return result;
+    },
+    pokemonByIds(parent, args, contextValue, info) {
+      const result = pokedex.filter((pokemon) => args.ids.includes(pokemon.id));
+      return result;
+    },
   },
 };
 
