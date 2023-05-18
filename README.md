@@ -1,6 +1,6 @@
 A Hoenn Pokédex API (and eventually web app), now with Apollo/GraphQL (and eventually React)
 
-A rebuild of the pokedex project I originally made many moons ago - see the old readme below, I'll gradually update this.
+A rebuild of the pokedex project I originally made many moons ago - see the old readme below, I'll gradually update this - none of the REST stuff is accurate atm
 
 ### Old Readme
 
