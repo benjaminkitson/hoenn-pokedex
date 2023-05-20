@@ -5,12 +5,14 @@
   "license": "MIT",
   "dependencies": {
     "@apollo/server": "^4.7.1",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "koa": "^2.14.2"
   },
   "type": "module",
   "scripts": {
     "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "start": "npm run compile && node ./dist/index.js",
+    "koa": "npm run compile && node ./dist/koa.js"
   },
   "devDependencies": {
     "@types/node": "^20.2.1",
